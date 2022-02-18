@@ -54,9 +54,9 @@ const cart = [
 */
 
 function calcFinalPrice(cartTotal, couponValue, tax){
-    return (tax * cartTotal) - couponValue
+    return ((1 + tax) * cartTotal) - couponValue
 }
-
+console.log(calcFinalPrice(100,40,.08))
 
 
 //////////////////PROBLEM 3////////////////////

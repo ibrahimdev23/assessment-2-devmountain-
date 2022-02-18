@@ -59,6 +59,25 @@ function canWeDeliver(zipCode){
 }
 
 
+// function checeZipcode(zcode){
+//     let inZone = false
+
+
+//     deliveryAreaZipCodes.forEach(function(item, index){
+//         if(zcode === item){
+//             inZone = true 
+//         }
+
+//         if(inZone){
+//            return `You're in our delivery zone`
+//         } else {
+//             return `Sorry, we can't deliver to that address`
+
+//         }
+// }) 
+
+// }
+
 console.log(canWeDeliver(85213))
 
 /* 
@@ -135,3 +154,11 @@ console.log(newDiscount)
     to be displaying wrong on the live site.
 */
 
+//.trim 
+
+
+
+    let newDiscountMonth = deals.map((function(item,index){
+        return item.title.replace("15%", "10%")}))
+
+        console.log(newDiscountMonth.trim())
