@@ -125,14 +125,14 @@ const foodArr = [
     your food objects has.
 */
 
-let tagChecker = foodArr.map(function(item){
-    return {
-        ...item === "vegan"
-
+let tagChecker = foodArr.filter(function(item){
+    for(let i = 0; i < foodArr.length; i++){
+      if(item.tags[i] === "sugar")
+        return item
     }
-})
-
-console.log(tagChecker)
+  })
+  
+console.log(item)  
 
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
