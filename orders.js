@@ -30,18 +30,16 @@
 */
 
 class Ticket {
-    constructor(items, orderTime, customerId, status){
-    this.items = items 
-    this.orderTime = orderTime
-    this.customerId = customerId
-    this.status = 'queued'
-    
+    constructor(items, orderTime, customerId) {
+        this.items = items
+        this.orderTime = orderTime
+        this.customerId = customerId
+        this.status = 'queued'
     }
-  updateStatus(newStatus){
-    this.status = newStatus
-    console.log(`The order for customer ${this.customerId} is now ${this.status}`)
-  }
-    
+        updateStatus = (newStatus => {
+        this.status = newStatus
+        return `The order for ${this.customerId} is now ${this.status}`
+    })
 }
 
 
@@ -57,8 +55,7 @@ class Ticket {
     customer: 575
 */
 
-let firstTicket = new Ticket(["pizza","soda"], '7:03 PM', 575)
-console.log(firstTicket)
+const firstTicket = new Ticket ('jersey', '12AM', 4)
 
 
 /*
@@ -67,4 +64,5 @@ console.log(firstTicket)
     'cooking'
 */
 
-firstTicket.updateStatus(`cooking`)
+firstTicket.updateStatus('packing')
+console.log(firstTicket)

@@ -19,17 +19,14 @@
     stored on the object.
 */
 
-
 class Employee {
     constructor(name, shifts){
-        this.name = name 
+        this.name = name
         this.shifts = shifts
     }
-
-    getSchedule(){
+    getSchedule() {
         return `${this.name} works on ${this.shifts}`
     }
-
 }
 
 
@@ -43,13 +40,14 @@ class Employee {
     shifts: weekday mornings, weekday afternoons
 */
 
-const empOne = new Employee("Jess", ["weekday mornings", "weekday afternoons"])
+let empOne = new Employee('Don', 'Mondays to Thrusday mornings' )
+
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
-empOne.getSchedule()
+/empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -64,7 +62,10 @@ empOne.getSchedule()
 */
 
 let empTwo = {...empOne}
-empTwo.name = "Nick"
+empTwo.name = "Matt"
+
+
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -90,22 +91,20 @@ empTwo.name = "Nick"
     the employees array. 
 */
 
-class Manager extends Employee{
+class Manager extends Employee {
     constructor(name, shifts, employees){
         super(name, shifts)
-
         this.employees = employees
     }
-
     getEmployees(){
-        return `${this.name} manages ${this.employees} `
+        console.log(`${this.name} manages ${this.employees}`)
     }
-
     addEmployee(emp){
         this.employees.push(emp)
-        return`${emp}`
     }
 }
+
+
 
 
 
@@ -120,14 +119,15 @@ class Manager extends Employee{
     employees: Cece and Schmidt
 */
 
-const manager1 = new Manager("Winston", ["weekday mornings", "weekday afternoons"], ["Cece", "Schmidt"])
+let manager = new Manager('Winston', 'Weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
 
 
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
-manager1.getEmployees()
+
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -135,7 +135,7 @@ manager1.getEmployees()
     'Coach' or whatever name you'd like.
 */
 
-manager1.addEmployee("john")
+manager.addEmployee('Coach')
 
 /*
     Call the `getEmployees` method on the
@@ -143,4 +143,4 @@ manager1.addEmployee("john")
     that an employee was added.
 */
 
-manager1.getEmployees()
+manager.getEmployees()

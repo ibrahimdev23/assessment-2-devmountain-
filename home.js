@@ -20,9 +20,13 @@
     argument, `greetUser` should return the string:
     'Welcome back, Andrew'
 */
-let greetUser = ((username) =>  `Welcome back, ${username}` )
 
-console.log(greetUser("John"))
+const greetUser = (username) => {
+    return `Welcome back, ${username}`
+}
+
+
+
 
 
 
@@ -49,36 +53,21 @@ console.log(greetUser("John"))
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-function canWeDeliver(zipCode){
-    for(let i = 0; i <= deliveryAreaZipCodes.length; i++){
-        if(deliveryAreaZipCodes[i] === zipCode)
-            return "You're in our delivery zone"
-        
-    }
-     return "Sorry, we can't deliver to that address"
-}
+const canWeDeliver = (zipCode) => {
+
+    deliveryAreaZipCodes.filter(item => {
+      if(item !== zipCode){
+       return "You're in our delivery zone!"
+      } else {
+        return `Sorry, we can't deliver to that address`
+      }
+    })
+  
+  
+    
+  }
 
 
-// function checeZipcode(zcode){
-//     let inZone = false
-
-
-//     deliveryAreaZipCodes.forEach(function(item, index){
-//         if(zcode === item){
-//             inZone = true 
-//         }
-
-//         if(inZone){
-//            return `You're in our delivery zone`
-//         } else {
-//             return `Sorry, we can't deliver to that address`
-
-//         }
-// }) 
-
-// }
-
-console.log(canWeDeliver(85213))
 
 /* 
     Problem 2 Continued
@@ -97,9 +86,14 @@ console.log(canWeDeliver(85213))
     Name your new function `canWeDeliverTwo`.
 */
 
-zipCode = 85204
-canWeDeliverTwo = deliveryAreaZipCodes.includes((zipCode))
 
+const canWeDeliver = (zipCode) => {
+
+    return deliveryAreaZipCodes.includes(zipCode) ? "You're in our delivery zone" : "Sorry, we can't deliver to that address"
+    
+    
+    }
+    
 
 
 
@@ -116,7 +110,7 @@ canWeDeliverTwo = deliveryAreaZipCodes.includes((zipCode))
     Read on for more instructions.
 */
 
-let deals = [
+const deals = [
     {
         title: '15% Off!', 
         desc: 'Applied to your entire order when you spend $30 or more'
@@ -124,7 +118,7 @@ let deals = [
     {
         title: 'Free Kids Meal with 2 Regular Entrees', 
         desc: '   This deal lasts until the end of March! '
-    },
+    }
 ]
 
 /*
@@ -136,11 +130,10 @@ let deals = [
     to replace the 15 with a 10.
 */
 
-let newDiscount = deals.map((function(item,index){
-    return item.title.replace("15%", "10%")
-}))
+deals[0].title = deals[0].title.replace('15 Off!', '10 Off!')
 
-console.log(newDiscount)
+
+
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -154,11 +147,4 @@ console.log(newDiscount)
     to be displaying wrong on the live site.
 */
 
-//.trim 
-
-
-
-    let newDiscountMonth = deals.map((function(item,index){
-        return item.title.replace("15%", "10%")}))
-
-        console.log(newDiscountMonth.trim())
+deals[1].desc = deals[1].desc.trim().replace('March', 'April')

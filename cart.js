@@ -33,8 +33,12 @@ const cart = [
     }
 ]
 
-//CODE HERE
 
+const sumAllFood = cart.reduce((acc, curr) => {
+    return acc + curr.price
+}, 0 )
+
+console.log(sumAllFood)
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
 
@@ -53,10 +57,10 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-function calcFinalPrice(cartTotal, couponValue, tax){
-    return ((1 + tax) * cartTotal) - couponValue
+const calcFinalPrice = (cartTotal, couponValue, tax) =>{
+    return (cartTotal - couponValue) * (tax + 1)
 }
-console.log(calcFinalPrice(100,40,.08))
+
 
 
 //////////////////PROBLEM 3////////////////////
@@ -80,7 +84,11 @@ console.log(calcFinalPrice(100,40,.08))
 */
 
 /*
-    TEXT ANSWER HERE
+ Customer object would include information about the customer 
+ like the name, address of the customer in a string
+ the email
+ the order total as a Number and the iteams as a string
+ and if we deliver to their address in boolean 
 
 */
 
@@ -89,4 +97,10 @@ console.log(calcFinalPrice(100,40,.08))
     guidelines.
 */
 
-//CODE HERE
+let customer = {
+    Name: "John Montana",
+    Address: "1111 Place NYC, NY",
+    Products: "shorts",
+    Total: 15,
+    canDeliver: true,
+}
